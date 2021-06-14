@@ -1,0 +1,498 @@
+body {
+	background-color:#fff;
+}
+
+.two-columns {
+	position:relative;
+}
+
+@media only screen and (min-width: 800px) {
+
+	.heading,.registrant {
+		padding:6px;
+	}
+	.two-columns .main {
+		position: absolute;
+	/*	transition: top 1.5s ease, left 1.5s ease;*/
+		/*left:800px;
+		right:auto;
+		top:auto;
+		bottom:auto;
+		*/
+	}
+	
+	.main .event-banner {
+		display:none;
+	}
+	
+	.button-back {
+		background-image: url("/sites/default/modules/event/images/baseline_arrow_left_white_18dp.png");
+		background-repeat: no-repeat;
+		background-position: 5px center;
+	}
+
+	body.eventRegistration .two-columns .main {
+		transition: top 1.5s ease-out, left 0.75s ease-out;
+		top: 0px !important;
+		left: 0px !important;
+	}
+	
+	body.reset-main {
+		transition: top 1.5s ease, left 1.5s ease;
+		top:auto;
+		left:auto;	
+	}
+	
+	.registrant-action-orientation-after button {
+		display:none;
+	}
+
+	div.registrant-field {
+		display:table-cell;
+		margin-top:0px;
+		padding:0px;
+		padding-right:15px !important;
+		padding-top:7px;
+	}
+	
+	div.registrant-field-pricebookentry {
+		max-width:500px;
+	}
+	
+	div.registration-headings {
+		font-weight:bold;
+		font-family:Helvetica;
+	}
+
+
+}
+
+
+
+.page-wrapper {
+	background-color:#fff;
+}
+
+/**
+ * @popup values
+ */
+.store-product-options input[type="number"] {
+	width:30px;
+}
+
+.registrant-action {
+	margin-top:5px;
+}
+
+.registrant-action button {
+	font-size:smaller;
+}
+
+form div[class*="row"] {
+	margin-top:15px;
+}
+
+form label[class*="help"] {
+	font-size:smaller;
+	font-style:italic;
+}
+
+input[class*="button"] {
+margin-top:15px;
+	width:200px;
+	height:75px;
+	font-weight:bold;
+	padding:15px;
+	font-size:14pt;
+}
+
+
+
+h1, h2 {
+	margin-top:0px;
+	font-weight:400;
+}
+
+.event-banner {
+	background-color:#53638c;
+	background-size:cover;
+	background-position: bottom center;
+	background-repeat:no-repeat;
+	color:#fff;
+	padding:15px;
+	text-align:center;
+}
+
+
+
+div[id*="eventRegistrationForm"] {
+	clear:both;
+}
+
+.registrant,
+.registration-headings {
+	display:block;
+}
+
+.registrant-action,
+.registrant-field,
+.heading {
+	display:inline-block;
+}
+
+.no-registrants .heading {
+	min-width:100px;   
+}
+
+.registrant {
+	border-bottom:1px solid #ccc;
+	padding-bottom:8px;
+}
+
+
+
+
+.registrant-field-pricebookentry,
+.registrant-field-first-name,
+.registrant-field-last-name,
+.registrant-field-email {
+
+}
+
+.two-columns .column-first {
+	display:block;
+}
+
+.registrant-action-orientation-after {
+	
+}
+
+.registrant-action-orientation-before {
+	display:none;
+}
+
+
+
+
+.content:after {
+	content:"";
+	float:none;
+	display:block;
+	clear:both;
+}
+
+
+.panel {
+	padding:0;
+	text-align:left;
+}
+
+body {
+	margin:0 !important;
+}
+
+
+
+.button {
+	margin-top:3px;
+    margin-top: 3px;
+    border-radius: 5px;
+    -webkit-font-smoothing: antialiased;
+    color: #eee;
+}
+
+.button:hover {
+	color:#fff;
+	text-decoration:none;
+}
+
+.button:hover a {
+	text-decoration:none;
+}
+
+
+input[type="text"], button, select, option {
+	font-size:1.1em;
+	max-width:100%;
+}
+
+.registrant-field, .heading {
+	padding-right:5px;
+}
+
+.registrant-field {
+	padding-top:15px;
+}
+
+
+.one-column .event-banner {
+	display:none;
+}
+
+
+@media screen and (max-width: 860px) {
+
+	.local-actions {
+		position:fixed;
+		bottom:0px;
+		text-align:center;
+	}
+	
+	div[id*="eventErrorMessages"] {
+		position:fixed;
+		top:115px;
+		z-index:5;
+	}
+	
+	.local-actions .local-action {
+		display:inline-block;
+		vertical-align: middle;
+		min-height: 50px;
+	}
+
+	body {
+		font-size:12pt;
+	}
+	.main {
+		width:auto;
+	}
+
+	.mobile {
+		display:block;
+	}
+
+	.registration-headings {
+		display:none;
+	}
+
+	.row {
+		text-align:center;
+	}
+	
+	.content {
+		margin: 0 auto;
+		text-align:left;
+	}
+
+	.registrant {
+		display:inline-block;
+		margin-top:12px;
+		padding: 8px;
+		width:95%;
+		text-align:left;
+		border: 1px solid #eaeaea;
+	}
+	
+	.new-registrant {}
+
+
+	.nav li.no-mobile, .no-mobile {
+		display:none;
+	}
+	
+	.col-right {
+		margin-top:8px;
+	}
+	
+	
+
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+	.mobile {
+		display:block;
+	}
+
+	.registration-headings {
+		display:none;
+	}
+
+	.registrant {
+		display:block;
+		margin-top:8px;
+		border-top:1px solid #666;
+		padding-top:4px;
+	}
+
+	.registrant-field, .registrant-action {
+		display:block;
+	}
+
+
+	.nav li.no-mobile, .no-mobile {
+		display:none;
+	}
+
+}
+
+.event-banner-image-element {
+	display:none;
+}
+
+.two-columns .event-banner {
+	background-image:none !important;
+}
+
+.row.one-column {
+
+}
+
+
+.registrant-field-hidden {
+	display:none;
+}
+
+
+.local-action {
+	display:inline-block;
+	width:20%;
+}
+
+.paid-office-loader {
+	display:none;
+	margin-top:80px;
+	background-color:#fff;
+	color:#666;
+	padding:15px;
+	border: 1px solid #666;
+	border-radius:8px;
+}
+
+.loading .paid-office-loader {
+	display:block;
+}
+
+@media only screen and (min-width: 800px) {
+
+	div.registrant-field-first-name input {
+		max-width:85px;
+	}
+
+	div.registrant-field-last-name input {
+		max-width:100px;
+	}
+
+	.mobile {
+		display:none;
+	}
+	
+	.one-column .event-banner {
+		display:block;
+		height:250px;
+		background-repeat:no-repeat;
+	}
+	
+	.one-column .event-banner {
+		text-shadow: 1px 2px #666;
+	}
+	
+	.one-column .event-banner-title {
+		/*margin-top:60px;*/
+	}
+	
+	#registration-form {
+		display:table;
+	}	
+	
+	.registration-headings {
+		display:table-row;
+	}
+	
+	.heading {
+		display:table-cell;
+	}
+	
+	
+	.registrant-action-orientation-before {
+		display:table-cell;
+		padding-right: 15px;
+	}
+	
+	.mobile.registrant-action {
+		display:none;
+	}
+
+	.registrant {
+		display:table-row;
+	}
+
+	
+	.local-action {
+			max-width:40%;	
+			display:inline-block;
+	}
+	
+
+
+}
+
+	
+
+/**
+ * COLORBOX OVERRIDES FOR EVENT REG
+ ** ADD-ON ITEMS
+ */
+
+
+form div[class*="row"] {
+	margin-top:15px;
+}
+
+form label[class*="help"] {
+	font-size:smaller;
+	font-style:italic;
+}
+
+input[class*="button"] {
+	margin-top:15px;
+	width:200px;
+	height:75px;
+	font-weight:bold;
+	padding:15px;
+	font-size:14pt;
+}
+
+
+
+div[id*="eventRegistrationForm"] {
+	clear:both;
+}
+
+
+
+.saveRegistrantButton {
+	background-color: yellow;
+}
+
+
+.saveRegistrantButton button {
+	border: 1px solid #999;
+	padding: 5px;
+	font-size: 14px;
+}
+
+
+@media screen and (max-width: 600px) {
+	input {
+		border: 1px solid #999;
+		padding: 4px;
+		width: 100%;
+	}
+	
+	.registrant-action button {
+		width: 100%;
+		text-align: center;
+		padding: 12px;
+		border: 1px solid #aaa;
+		
+	}
+	
+	label.mobile {
+			display: inline-block;
+			margin-bottom: 8px;
+			margin-top: 10px;
+	}
+}
+

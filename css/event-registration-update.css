@@ -1,0 +1,113 @@
+/**
+ * structure
+ */
+.one-column .column {
+	display: block !important;
+}
+
+
+
+.one-column .column {
+	margin-top:30px;
+}
+
+.one-column .column {
+
+}
+
+.page-wrapper {
+	text-align:center;
+}
+
+.row {
+	max-width:800px;
+	margin:0 auto;
+	text-align:left;
+}
+
+input[type="radio"] {
+	display:inline-block;
+}
+
+label {
+	display:inline-block;
+	font-weight:bold;
+}
+
+.modal-form-actions {
+	margin-top:25px;
+}
+
+.modal-form-actions .form-action {
+	display:inline-block;
+	min-width: 90%;
+	
+}
+
+.food-menu-item {
+	margin-top:25px;
+	display:inline-block;
+}
+
+.all-attendees-wrapper {
+	height:0;
+	transition: height .5s ease-in;
+	overflow:hidden;
+}
+
+.all-attendees-wrapper.expanded {
+	height:1000px;
+}
+
+.attendee-wrapper .form-item {
+	display:inline-block;
+}
+
+.menu-description {
+	margin-bottom:15px;
+}
+
+.meal-label {
+	font-family:Verdana;
+	font-weight:bold;
+	display:block;
+}
+
+
+.food-menu-item {
+	margin-bottom:5px;
+}
+
+.menu-item-description {
+	display:inline-block;
+	margin-left:5px;
+}
+
+
+	.form-item-breakout input {
+		max-width:15%;
+		vertical-align:top;
+		margin-right:15px;
+	}
+	
+	.form-item-breakout label {
+		max-width:70%;
+	}
+	
+	
+@media only screen and (min-width:800px){
+	.modal-form-actions .form-action {
+		min-width:150px;
+	}	
+	.form-item-breakout input, .form-item-breakout label {
+		display:inline-block;
+	}
+
+
+	
+	.breakout-title {
+		font-family:arial;
+	}
+	
+	
+}

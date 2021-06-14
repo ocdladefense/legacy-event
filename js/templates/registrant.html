@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Customer Event Registration Template</title>
+	</head>
+	<body>
+	
+		<ul data-opportunity-line-item-id="{{opportunityLineItemId}}" class="registrant new-registrant user-updated-true" id="registrant-{{clientId}}">
+
+			<div class="registrant-field registrant-status">
+					<div class="registrant-status">
+							<a href="#" class="registrant-user-updated" onclick="return false;" title="This member was updated by you.">&nbsp;</a>
+					</div>
+			</div>  
+                    
+			<div class="registrant-action registrant-action-orientation-before no-mobile">
+				<button data-action="save" class="saveRegistrantButton" data-cid="{{clientId}}">save</button>                      
+				<button data-action="remove" class="removeRegistrantButton" data-cid="{{clientId}}">
+						remove
+				</button>
+			</div>
+
+
+			<div class="registrant-field registrant-field-pricebookentry" id="pricebookEntryId-{{clientId}}">
+				<select name="j_id0:j_id1:j_id108:j_id109:eventRegistrationForm:j_id119:0:j_id126" class="pricebookEntryId" size="1">	
+					{{options}}
+				</select>
+			</div>
+
+			<div class="registrant-field registrant-field-first-name">
+				<label class="mobile" for="firstName-{{clientId}}">First Name</label>
+				<input id="firstName-{{clientId}}" name="firstName" size="11" placeholder="First Name" value="" type="text" />
+			</div>
+
+			<div class="registrant-field registrant-field-last-name">
+				<label class="mobile" for="lastName-{{clientId}}">Last Name</label>                                               <input id="lastName-{{clientId}}" name="lastName" size="15" placeholder="Last Name" value="" type="text" />
+			</div>
+
+			<div class="registrant-field registrant-field-email">
+				<label class="mobile" for="email-{{clientId}}">Email</label>                                       <input id="email-{{clientId}}" name="email" size="25" placeholder="Email address" value="" type="text" />                      
+			</div>
+
+			<div class="registrant-field registrant-field-hidden">   
+			<input id="clientId-{{clientId}}" data-opportunity-line-item-id="" name="clientId" value="{{clientId}}" type="hidden" /> 
+				<input type="hidden" size="25" id="contactId-{{clientId}}" name="contactId" value="{{contactId}}" />                      
+				<input id="id-{{clientId}}" name="opportunityLineItemId" value="" type="hidden" />                      
+			</div>
+
+			<div class="mobile registrant-action">                        
+				<button data-action="save" class="saveRegistrantButton" data-cid="{{clientId}}">save</button>                         
+			</div>
+
+		</ul>
+
+	</body>
+</html>
