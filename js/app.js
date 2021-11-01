@@ -46,7 +46,7 @@ globalScripts(["require","libData",
 		data.quantity = quantitySelected ? quantityOptions[quantitySelected].value : 1;
 		
 		
-		data.notAttendee = data.pricebookEntryId == "01u8D000000PeYU";
+		data.notAttendee = data.pricebookEntryId == "01u5b00000J4BKHAA3";
 		console.log("	IN NODE DATA ALGORITHM ",data);
 		
 		return data;

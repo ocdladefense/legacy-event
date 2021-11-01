@@ -105,7 +105,7 @@ define(["all/modules/cart/js/salesforce/visualforce-actions",
 	function getOptions(isGuest) {
 	
 		var guestTicketHack = {
-			value: "01u8D000000PeYU",
+			value: "01u5b00000J4BKHAA3",
 			label: "  Reception Guest(s)  "
 		};	
 		var tickets = !!isGuest ? [guestTicketHack] : window.tickets;
