@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Customer Event Registration Template</title>
+	</head>
+	<body>
+	
+		<ul data-opportunity-line-item-id="{{opportunityLineItemId}}" class="registrant new-registrant user-updated-true" id="registrant-{{clientId}}">
+
+			<div class="registrant-field registrant-status">
+					<div class="registrant-status">
+							<a href="#" class="registrant-user-updated" onclick="return false;" title="This member was updated by you.">&nbsp;</a>
+					</div>
+			</div>  
+                    
+			<div class="registrant-action registrant-action-orientation-before no-mobile">
+				<button data-action="save" class="saveRegistrantButton" data-cid="{{clientId}}">save</button>                      
+				<button data-action="remove" class="removeRegistrantButton" data-cid="{{clientId}}">
+						remove
+				</button>
+			</div>
+
+
+			<div class="registrant-field registrant-field-pricebookentry" id="pricebookEntryId-{{clientId}}">
+				<select name="j_id0:j_id1:j_id108:j_id109:eventRegistrationForm:j_id119:0:j_id126" class="pricebookEntryId" size="1">	
+					{{options}}
+				</select>
+			</div>
+			
+			
+			<div class="registrant-field registrant-field-quantity" id="quantity-{{clientId}}">
+				<select name="eventRegistrationForm-quantity" class="quantity" size="1">	
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+				</select>
+				
+				<span style="font-style: italic;">Choose the number of guests. Guests' names are not required.</span>
+			</div>
+
+
+			<div class="registrant-field registrant-field-hidden">   
+			<input id="clientId-{{clientId}}" data-opportunity-line-item-id="" name="clientId" value="{{clientId}}" type="hidden" /> 
+				<input type="hidden" size="25" id="contactId-{{clientId}}" name="contactId" value="{{contactId}}" />                      
+				<input id="id-{{clientId}}" name="opportunityLineItemId" value="" type="hidden" />                      
+			</div>
+
+			<div class="mobile registrant-action">                        
+				<button data-action="save" class="saveRegistrantButton" data-cid="{{clientId}}">save</button>                         
+			</div>
+
+		</ul>
+
+	</body>
+</html>

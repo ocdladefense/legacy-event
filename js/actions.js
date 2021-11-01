@@ -4,6 +4,8 @@ define(["all/modules/cart/js/salesforce/visualforce-actions",
 
 	var templatePath;
 	
+	var guestTemplatePath;
+	
 	var availableActions = {
 		// Cb should be determined based on the currently executing add-to-cart pricebookEntryId
 		forms: function(manager,cb) {
@@ -30,6 +32,8 @@ define(["all/modules/cart/js/salesforce/visualforce-actions",
 		}
 	};
 	
+	
+	
 	function saveRegistrant(data){
 	
 		var errors = [];
@@ -37,10 +41,10 @@ define(["all/modules/cart/js/salesforce/visualforce-actions",
 		var thePromise;
 
 		validate.validateMember(data);
-		data.quantity = "1.0";
+		data.quantity = !!data.quantity ? data.quantity : "1.0";
 
 		
-		thePromise = cartActions.updateItem(data.clientId,data);
+		thePromise = cartActions.updateItem(data.clientId, data);
 		console.log(thePromise);
 		
 		
@@ -98,14 +102,17 @@ define(["all/modules/cart/js/salesforce/visualforce-actions",
 
 
 
-	function getOptions(){
-		var tickets = window.tickets;
+	function getOptions(isGuest) {
+	
+		var guestTicketHack = {
+			value: "01u8D000000PeYU",
+			label: "  Reception Guest(s)  "
+		};	
+		var tickets = !!isGuest ? [guestTicketHack] : window.tickets;
 		var options = '';
 	
-		// ret = '<select name="j_id0:j_id1:j_id52:j_id53:eventRegistrationForm:j_id62:0:j_id64" class="productCode" size="1">';
-	
-		//for(var idx = 0; idx<tickets.length; idx++){
-		for(var i=0; i<tickets.length; i++){
+
+		for(var i=0; i<tickets.length; i++) {
 			var disabled = tickets[i].disabled ? ' disabled="disabled" ' : '';
 			var option = '<option value="'+tickets[i].value+'"'+disabled+'>'+tickets[i].label+'</option>';
 			options += option;
@@ -115,12 +122,15 @@ define(["all/modules/cart/js/salesforce/visualforce-actions",
 	}
 	
 	
-	function newRegistrant(cid){
-
+	
+	
+	function newRegistrant(cid, isGuest){
+		
 		var obj = {
 			clientId: generateCid(),
-			options: getOptions()
+			options: getOptions(!!isGuest)
 		};
+
 
 		return view.loadTemplate("//"+OCDLA.domain+"/"+templatePath+"?"+obj.clientId)
 		.then(function(tpl){
@@ -131,11 +141,40 @@ define(["all/modules/cart/js/salesforce/visualforce-actions",
 				$(this).show();
 			});
 		});
+
 	}
+	
+	
+	
+	
+	function newGuest(cid){
+		
+		var obj = {
+			clientId: generateCid(),
+			options: getOptions(true)
+		};
+
+
+		return view.loadTemplate("//"+OCDLA.domain+"/"+guestTemplatePath+"?"+obj.clientId)
+		.then(function(tpl){
+			return view.parse(tpl,obj,{replaceAll:true});
+		})
+		.then(function(html){
+			$("#registration-form").append(html).slideDown('600',function(){
+				$(this).show();
+			});
+		});
+
+	}
+	
+	
+	
 	
 	return {
 		setTemplatePath: function(url){ templatePath = url; },
+		setGuestTemplatePath: function(url){ guestTemplatePath = url; },
 		newRegistrant: newRegistrant,
+		newGuest: newGuest,
 		saveRegistrant: saveRegistrant,
 		removeRegistrant: removeRegistrant,
 		setRegistrantOpportunityLineItemId: setRegistrantOpportunityLineItemId

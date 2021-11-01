@@ -8,6 +8,10 @@ define([],function(){
 
 	function validateMember(data){
 		var errors = [];
+		
+		if(data.notAttendee) {
+			return;
+		}
 	
 		if(isEmpty(data.firstName)){
 			errors.push('Registrant First Name field cannot be empty.');

@@ -16,6 +16,8 @@ globalScripts(["require","libData",
 
 	actions.setTemplatePath("sites/default/modules/event/js/templates/registrant.html");
 	
+	actions.setGuestTemplatePath("sites/default/modules/event/js/templates/guest.html");
+	
 	event.setContainerId("registration-form");
 		
 	$(function(){
@@ -24,11 +26,28 @@ globalScripts(["require","libData",
 	
 	var nodeDataAlgorithm = function(node){
 		var data = libData.getFormData(node);
-		var selectNode = node.querySelectorAll("select[name*='eventRegistrationForm']");
-		var selectedIndex = selectNode[0].selectedIndex;
-		var options = node.querySelectorAll("select[name*='eventRegistrationForm']")[0].options;
-		data.pricebookEntryId = options[selectedIndex].value;
-		console.log("Data is: ",data);
+		var selectNodes = node.querySelectorAll("select[name*='eventRegistrationForm']");
+		
+		var pricebookEntries = selectNodes[0];
+		var quantities = selectNodes[1];
+		
+		console.log(quantities);
+		
+		var pricebookEntryOptions = pricebookEntries.options;
+		var quantityOptions = quantities ? quantities.options : null;
+		
+		
+		var pricebookEntrySelected = pricebookEntries.selectedIndex;
+		var quantitySelected = quantityOptions ? quantities.selectedIndex : null;
+		
+		
+		
+		data.pricebookEntryId = pricebookEntryOptions[pricebookEntrySelected].value;
+		data.quantity = quantitySelected ? quantityOptions[quantitySelected].value : 1;
+		
+		
+		data.notAttendee = data.pricebookEntryId == "01u8D000000PeYU";
+		console.log("	IN NODE DATA ALGORITHM ",data);
 		
 		return data;
 	};

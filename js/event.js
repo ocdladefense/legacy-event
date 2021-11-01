@@ -41,7 +41,7 @@ define(["libData",
 			return false;
 		}
 		
-		var approvedActions = ["save","remove","new","close-registration"];
+		var approvedActions = ["save","remove","new","new-guest","close-registration"];
 		
 		if(approvedActions.indexOf(action) == -1){
 			return false;
@@ -77,7 +77,8 @@ define(["libData",
 	
 				var data = nodeDataAlgorithm(node);
 				
-
+				console.log("Data from node is: "+data);
+				
 				actions.saveRegistrant(data).then(function(data){
 
 					// cart.refreshCartComplete(data);
@@ -125,14 +126,20 @@ define(["libData",
 				
 			} else if("new" == action){
 				ui.showStatus("Loading...");
-
 				actions.newRegistrant(data).then(function(){
+					window.setTimeout(ui.hideLoading,1200);
+				});
+			} else if("new-guest" == action){
+				ui.showStatus("Loading...");
+				console.log("Creating new guest entry...");
+				actions.newGuest(data).then(function(){
 					window.setTimeout(ui.hideLoading,1200);
 				});
 			}
 		
 		} catch(e) {
 
+			console.log(e);
 			window.activeSaveRequest = false;
 			if(window.confirm(e)){
 				ui.showStatus("Fixing errors...");
