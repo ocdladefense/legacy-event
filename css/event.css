@@ -496,3 +496,23 @@ div[id*="eventRegistrationForm"] {
 	}
 }
 
+
+
+.auction-item {
+	font-family: Helvetica;
+	margin-top: 40px;
+}
+
+.auction-item p {
+	line-height: 22px;
+}
+
+.attribution {
+
+	font-style: italic;
+	color: rgba(99, 18, 18, 1.0);
+}
+
+.auction-item h2 {
+	font-weight: bold;
+}
