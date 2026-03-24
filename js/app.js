@@ -67,7 +67,7 @@ globalScripts(["require", "libData",
 			window.showTab = function (tabId) {
 				if (tabId == "eventRegistration")
 				{
-					setWidth("100%");
+					// setWidth("100%");
 				}
 				$('body').addClass(tabId);
 				if (!$('#' + tabId).length) return false;
